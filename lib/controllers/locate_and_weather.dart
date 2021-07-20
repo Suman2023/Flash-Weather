@@ -52,7 +52,7 @@ class Service {
 
   static Future<WeatherData> fetchWeather(String lat, String lon) async {
     var response = await client.get(Uri.parse(
-        "https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&units=metric&appid=0a1540015ff9329ec87514758f7ebd78"));
+        "https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&units=metric&appid=API_KEY"));
 
     if (response.statusCode == 200) {
       var jsonString = response.body;
@@ -64,7 +64,7 @@ class Service {
 
   static Future<AirData> fetchAirData(String lat, String lon) async {
     var response = await client.get(Uri.parse(
-        "https://api.openweathermap.org/data/2.5/air_pollution?lat=$lat&lon=$lon&appid=0a1540015ff9329ec87514758f7ebd78"));
+        "https://api.openweathermap.org/data/2.5/air_pollution?lat=$lat&lon=$lon&appid=API_KEY"));
 
     if (response.statusCode == 200) {
       var jsonString = response.body;
